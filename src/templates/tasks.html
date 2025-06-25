@@ -1,0 +1,13 @@
+{% for task in tasks %}
+<div class="task {% if task.completed %}completed{% endif %}">
+    <div class="content">
+        <div class="checkbox {% if task.completed %}checked{% endif %}"
+            onclick="window.location.href='/toggle/{{ task.id }}'"></div>
+        <div class="label">{{ task.title }}</div>
+    </div>
+    <div>
+        <a href="/edit/{{ task.id }}">✏️</a>
+        <a href="/delete/{{ task.id }}">🗑️</a>
+    </div>
+</div>
+{% endfor %}
